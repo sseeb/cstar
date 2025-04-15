@@ -18,6 +18,9 @@ storing the datasets we already pre-processed.
 - Familiarize ourselves with **GitHub**
   - Always use `git pull` before you start working;
   - `git pull --rebase` may be helpful on solving conflicts.
+  - Note: I put `.Rproj` files on the `.gitignore`. Thus, if you use Rstudio
+    projects, you will need to create your own project locally. That should not
+    affect how things are working.
 
 - **Coding style**: we should try to follow coding conventions to make it easier
   for others to read each others code. I know not all people are "tidyverse"
