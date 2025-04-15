@@ -15,11 +15,13 @@ glimpse(my_dt)
 ## turning the dataset into a spatial object
 
 my_crs <- st_crs("epsg:4326")
+my_crs_2 <- st_crs("epsg:4269") # what happens if we change the CRS??
 
 my_dt <- my_dt |>
   st_as_sf(coords = c("decimal_longitude_o",
                       "decimal_latitude_o"),
            crs = my_crs)
+           # crs = my_crs_2)
 
 ## quick dataviz
 
