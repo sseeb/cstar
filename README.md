@@ -1,34 +1,54 @@
 ## Structure
 
+To mantain the **repository organized** and make it easier for other people to
+understand it, I tend to keep the following simple **structure**:
+
 - scripts are placed in `code`.
 
 - datasets in `data`
 
 - documentation in `docs`
 
+Sometimes, it is convenient to have sub-directories (folders) for `data`. For
+instance, we could have `data/raw` storing raw data, and `data/processed`
+storing the datasets we already pre-processed.
+
 ## Goals
 
-- Familiarize ourselves with GitHub
+- Familiarize ourselves with **GitHub**
   - Always use `git pull` before you start working;
   - `git pull --rebase` may be helpful on solving conflicts.
 
-- Coding style: we should probably follow similar conventions to make it easier
-  for others to read our code.
+- **Coding style**: we should try to follow coding conventions to make it easier
+  for others to read each others code. I know not all people are "tidyverse"
+  enthusiasts, however, their style guide is still quite useful. Check this
+  [link](https://style.tidyverse.org/).
 
-- Discuss the repository structure. Some of the options are: 
+- Discuss the **repository structure**. Some of the options are:
   - Working on separate scripts (pros: avoids conflicts; cons: it makes it
     harder to organize the repo.)
 
-
 ## R as a GIS
 
-`sf`, `terra`, `raster`, `tmap`, `mapview`, `leaflet`, `ggplot2`, `arrow` and
-  `geoarrow`
+In the file `code/read-dt.R`, I wrote a simple code to read the data we will
+work with. Next, I used the [`sf`](https://r-spatial.github.io/sf/) package to
+transform the `data.frame` into a spatial object.
 
-- Coordinate Reference System
+The tasks I planned are:
 
-- Example of reading the data and "turning it into a spatial dataset"
+1. Understand what is going on in the `code/read-dt.R` file.
+2. What are the lines 17 to 22 doing?
+3. What is a Coordinate Reference System (CRS)?
+4. Trying to use maps and descriptive statistics to understand the data and come
+   up with some interesting research questions.
+5. Other "spatial" packages to check: 
+   - Mostly for raster data: `terra`, `raster`;
+   - Interactive maps: `tmap`, `mapview`, `leaflet`, 
+   - Storing data efficiently: `geoarrow`
 
+> P.s.: I had to guess the CRS for this data. The
+> [epsg:4326](https://spatialreference.org/ref/epsg/4326/) is usually a good
+> guess.
 
 ## Data info
 
