@@ -66,3 +66,4 @@ flycheck_*.el
 # quarto files
 reports/*_files/*
 reports/*_cache/*
+.Rproj.user
