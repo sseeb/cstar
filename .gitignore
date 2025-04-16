@@ -3,7 +3,8 @@
 *.RData
 *.dat
 *.Rproj
-
+*.Rhistory
+  
 *.fls
 
 *.fdb_latexmk
