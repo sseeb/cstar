@@ -49,6 +49,12 @@ The tasks I planned are:
    - Interactive maps: `tmap`, `mapview`, `leaflet`, 
    - Storing data efficiently: `geoarrow`
 
+## New tasks
+
+1. Practice `git` and GitHub
+2. Length of cruise survei and sights
+3. data processing
+
 > P.s.: I had to guess the CRS for this dataset. The
 > [epsg:4326](https://spatialreference.org/ref/epsg/4326/) is usually a good
 > guess.
