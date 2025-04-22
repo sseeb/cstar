@@ -1,6 +1,8 @@
 library(sf)      ## spatial data
 library(dplyr)   ## data manipulation
 library(ggplot2) ## graphs
+library(leaflet)
+library(mapview)
 
 ##--- pre processing ----
 
@@ -23,8 +25,99 @@ my_dt <- my_dt |>
 
 ## quick dataviz
 
-ggplot(data = my_dt) +
+ggplot(data = ) +
   geom_sf(aes(color = wind_speed_t)) +
   scale_color_viridis_c(option = "H",
                         trans = "log1p") +
   theme_minimal()
+
+mapview(my_dt["wind_speed_t"])
+
+## skiming the data
+
+my_dt |>
+  st_drop_geometry() |>
+  skimr::skim()
+
+##--- cleaning species ----
+## species to upper case
+my_dt <- my_dt |>
+  mutate(species_1 = toupper(species_1),
+         species_2 = toupper(species_2))
+
+my_dt |>
+  st_drop_geometry() |>
+  count(species_1) |>
+  arrange(-n) |>
+  print(n = Inf)
+
+## checking proportion of unidentified species
+my_dt |>
+  st_drop_geometry() |>
+  mutate(unind = if_else(grepl("UNID", species_1), "YES", "NO")) |>
+  count(unind) |>
+  mutate(pc = n / sum(n))
+
+## merging species with "UNID" in their name
+my_dt <- my_dt |>
+  mutate(species_p_1 = if_else(grepl("(^U|UNID)", species_1), "UNID", species_1),
+         species_p_2 = if_else(grepl("(^U|UNID)", species_2), "UNID", species_2))
+
+my_dt |>
+  st_drop_geometry() |>
+  count(species_p_1) |>
+  arrange(-n) |>
+  mutate(pc = 100 * n / sum(n)) |>
+  print(n = Inf)
+
+my_dt |>
+  st_drop_geometry() |>
+  count(effort_on_off, species_p_1) |>
+  arrange(effort_on_off, -n) |>
+  mutate(pc = 100 * n / sum(n)) |>
+  print(n = Inf)o
+
+## Cleaning effort variable
+## -- everything to uppercase and replacing 0 with O.
+my_dt <- my_dt |>
+  mutate(effort_on_off = if_else(effort_on_off == "OM",
+                                 "ON",
+                                 toupper(gsub("0", "O", effort_on_off))))
+
+my_dt <- my_dt |>
+  mutate(effort_on_off = if_else(effort_on_off == "92",
+                                 NA_character_,
+                                 effort_on_off))
+
+my_dt |>
+  st_drop_geometry() |>
+  count(effort_on_off)
+
+## Cleaning transect variable
+## -- everything to uppercase and replacing 0 with O.
+my_dt |>
+  st_drop_geometry() |>
+  count(transect_on_off)
+
+my_dt <- my_dt |>
+  mutate(transect_on_off = toupper(gsub("0", "O", transect_on_off)))
+
+my_dt |>
+  st_drop_geometry() |>
+  count(transect_on_off)
+
+##--- looking at event code ----
+
+my_dt |>
+  st_drop_geometry() |>
+  count(event_code) |>
+  arrange(- n) |>
+  print(n = Inf)
+
+##--- looking at event code ----
+
+my_dt |>
+  st_drop_geometry() |>
+  count(cruise) |>
+  arrange(- n) |>
+  print(n = Inf)
