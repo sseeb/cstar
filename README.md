@@ -52,7 +52,7 @@ The tasks I planned are:
 ## New tasks
 
 1. Practice `git` and GitHub
-2. Length of cruise survei and sights
+2. Length of cruise survey and sights
 3. data processing
 
 > P.s.: I had to guess the CRS for this dataset. The
