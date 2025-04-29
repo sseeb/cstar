@@ -15,7 +15,6 @@ my_dt <- janitor::clean_names(my_dt)
 glimpse(my_dt)
 
 ## turning the dataset into a spatial object
-
 my_crs <- st_crs("epsg:4326")
 
 my_dt <- my_dt |>
@@ -24,8 +23,7 @@ my_dt <- my_dt |>
            crs = my_crs)
 
 ## quick dataviz
-
-ggplot(data = ) +
+ggplot(data = my_dt) +
   geom_sf(aes(color = wind_speed_t)) +
   scale_color_viridis_c(option = "H",
                         trans = "log1p") +
@@ -34,7 +32,6 @@ ggplot(data = ) +
 mapview(my_dt["wind_speed_t"])
 
 ## skiming the data
-
 my_dt |>
   st_drop_geometry() |>
   skimr::skim()
@@ -43,11 +40,19 @@ my_dt |>
 ## species to upper case
 my_dt <- my_dt |>
   mutate(species_1 = toupper(species_1),
-         species_2 = toupper(species_2))
+         species_2 = toupper(species_2),
+         event_code = toupper(event_code))
 
 my_dt |>
   st_drop_geometry() |>
   count(species_1) |>
+  arrange(-n) |>
+  print(n = Inf)
+
+## check if NAs in cue and species coincide
+my_dt |>
+  st_drop_geometry() |>
+  count(event_code) |>
   arrange(-n) |>
   print(n = Inf)
 
@@ -75,7 +80,15 @@ my_dt |>
   count(effort_on_off, species_p_1) |>
   arrange(effort_on_off, -n) |>
   mutate(pc = 100 * n / sum(n)) |>
-  print(n = Inf)o
+  print(n = Inf)
+
+## check if any species are spotted during the event code "W", which means
+## "weather update"
+my_dt |>
+  st_drop_geometry() |>
+  filter(event_code == "W") |>
+  count(species_p_1) |>
+  arrange(-n)
 
 ## Cleaning effort variable
 ## -- everything to uppercase and replacing 0 with O.
