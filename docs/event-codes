@@ -1,0 +1,20 @@
+Codeset: CalCOFI SIO Marine Mammal Event Glossary
+Description: Standard event codes and descriptions for California Cooperative Oceanic Fisheries Investigations (CalCOFI) marine mammal effort and sighting happenings.
+Submitted By: Melinda Kelley
+Source: Hildebrand Marine Mammal Laboratory
+
+
+
+Code      : Definition
+
+ST        : Start Transect - either when the vessel leaves a station or when observation begins mid-transect
+ET        : End Transect - note in comments what station you are arriving at
+XT        : Break Transect or Observation Effort - note "for fire drill/left generator broken", weather, etc.
+RT        : resume transect - returning after a XT
+E         : End Observation - closer for each day
+W         : Weather Update - should be made whenever there is a change in conditions
+P         : Position Update - should be made at least every hour, or if there is a change in heading
+SB        : Sight Begin - first observation
+SP        : Sighting Position Update - good for getting travel direction information, only make re-sights if there is time and you are not are not compromising your effort
+SE        : Sight End - closes observations for the sighting
+SB/SE     : Used when only one observation of a sighting is made
