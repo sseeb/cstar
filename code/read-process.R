@@ -134,3 +134,16 @@ my_dt |>
   count(cruise) |>
   arrange(- n) |>
   print(n = Inf)
+
+##--- looking at the "transect on" "effort on" data ----
+
+my_dt |>
+  filter(effort_on_off == "ON",
+         transect_on_off == "ON") |>
+  select(wind_speed_t) |>
+  mapview()
+
+##--- checking species names ----
+
+all_species <- readr::read_csv("data/1488405241_allspecieslist.csv") |>
+  janitor::clean_names()

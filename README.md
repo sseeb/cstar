@@ -84,3 +84,7 @@ visibility greater than 0.5 nmi; Ship is traveling along prescribed CalCOFI
 trackline; Ship speed is greater than or equal to 5 knots. Species ID may be
 confirmed via Big Eyes. Photos of sightings may be taken to verify species ID,
 though photo effort should not interfere with visual effort.
+
+### The species codes are available in the following link
+
+https://oceaninformatics.ucsd.edu/datazoo/catalogs/ccelter/datasets/255
