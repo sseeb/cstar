@@ -28,3 +28,5 @@
 - [ ] Data on the entanglements (from 1982 to 2024)
 
 - [ ] Check if other CalCOFI datasets have data after 2015
+
+- Interesting reference: https://www.nature.com/articles/s41467-019-14215-w
