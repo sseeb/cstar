@@ -30,3 +30,8 @@
 - [ ] Check if other CalCOFI datasets have data after 2015
 
 - Interesting reference: https://www.nature.com/articles/s41467-019-14215-w
+
+- Entanglements:
+  https://www.fisheries.noaa.gov/west-coast/marine-mammal-protection/west-coast-large-whale-entanglement-response-program
+  
+- 
