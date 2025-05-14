@@ -17,21 +17,31 @@
 
 - [x] Identify the species code for humpback whales.
 
-- [ ] Focus on observations on effort and on the transect (according to
-      variables `effort_on_off` and `transect_on_off`) to avoid opportunistic
-      sampling.
-
-- [ ] Create a variable that identifies the _blob_
+- [X] Create a variable that identifies the _blob_
   - Took place between 2014
   - Hit the fisheries in 2016
 
-- [ ] Data on the entanglements (from 1982 to 2024)
+- [X] Check if other CalCOFI datasets have data after 2015
 
-- [ ] Check if other CalCOFI datasets have data after 2015
+- [X] Data on the entanglements (from 2000 to 2021)
+
+- [ ] Double check the entanglements data
+
+- [X] Sea surface temperature (perhaps copernicus)
+
+- [ ] Process the transect log VS observation data
+
+- [ ] Think about the hypothesis
+
+- [ ] Make some cool graphs
+
+- Now we are using [this
+  dataset](https://portal.edirepository.org/nis/mapbrowse?scope=knb-lter-cce&identifier=255&revision=3)
 
 - Interesting reference: https://www.nature.com/articles/s41467-019-14215-w
 
 - Entanglements:
   https://www.fisheries.noaa.gov/west-coast/marine-mammal-protection/west-coast-large-whale-entanglement-response-program
   
-- 
+- Review paper on Marine Heatwave:
+  https://samstarko.wordpress.com/wp-content/uploads/2025/01/starko_etal_mhwreview_ms_final3.pdf

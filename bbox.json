@@ -1,0 +1,13 @@
+{
+    "dataset_id": "cmems_mod_glo_phy_my_0.083deg_P1M-m",
+    "minimum_longitude": -125.4,
+    "maximum_longitude": -117.2,
+    "minimum_latitude": 32.5,
+    "maximum_latitude": 46.3,
+    "output_directory": "data/copernicus",
+    "force_service": false,
+    "request_file": false,
+    "motu_api_request": false,
+    "overwrite": false,
+    "dry_run": false
+}

@@ -4,7 +4,9 @@
 *.dat
 *.Rproj
 *.Rhistory
-  
+
+data/copernicus/*.nc
+    
 *.fls
 
 *.fdb_latexmk
