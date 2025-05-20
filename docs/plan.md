@@ -6,8 +6,8 @@
 
 * Observations increased and, consequently, there were more entanglements.
 
-> The _blob_ was a marine heatwave that happened in the cost of CA a few (a decade :'( ) years
-> ago.
+> The _blob_ was a marine heatwave that happened in the cost of CA a few (a
+> decade :'( ) years ago.
 
 * There are no Humpback Whales on `species_2`.
 
@@ -27,7 +27,10 @@
 
 - [X] Sea surface temperature (perhaps copernicus)
 
-- [ ] Double check the entanglements data
+- [X] Double check the entanglements data
+
+- NMFS data is the one with most observations of humpback whales and widest
+  span of years.
 
 - [ ] Process the transect log VS observation data
 
