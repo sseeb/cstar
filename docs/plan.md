@@ -25,11 +25,13 @@
 
 - [X] Data on the entanglements (from 2000 to 2021)
 
-- [ ] Double check the entanglements data
-
 - [X] Sea surface temperature (perhaps copernicus)
 
+- [ ] Double check the entanglements data
+
 - [ ] Process the transect log VS observation data
+
+- [ ] Add the temperature data to the transect log
 
 - [ ] Think about the hypothesis
 
